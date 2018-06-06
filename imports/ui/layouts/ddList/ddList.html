@@ -1,0 +1,24 @@
+<template name="ddList">
+	{{#if getDdList 1}}
+		<table class="table table-striped">
+				<thead class="thead-light">
+						<tr>
+								<th scope="col">_id</th>
+								<th scope="col">label</th>
+								<th scope="col">name</th>
+								<th scope="col">type</th>
+						</tr>
+				</thead>
+				<tbody>
+				{{#each getDdList}}
+						<tr>
+								<td class="dd-item-id">{{_id}}</td>
+								<td>{{label}}</td>
+								<td>{{name}}</td>
+								<td>{{type}}</td>
+						</tr>
+				{{/each}}
+				</tbody>
+		</table>
+	{{/if}}	
+</template>

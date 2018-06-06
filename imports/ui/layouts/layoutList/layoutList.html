@@ -1,0 +1,23 @@
+<template name="layoutList">
+	{{#if getLayoutList 1}}
+		<h4>Layout</h4>
+		<form >
+			<div class="form-group">
+				<label for="add-button-name">You can add button to layout</label>
+				<input type="text" class="form-control" id="add-button-name" placeholder="Button name...">
+			</div>
+			<button class="btn btn-success-outline add-button-to-layout">add button to layout</button>
+			<button class="btn btn-danger-outline remove-all-buttons-from-layout">Remove all buttons</button>
+		</form>
+		{{#if getLayoutButtons}}
+			<div>
+				<hr>
+				<p>You have following buttons</p>
+				{{#each getLayoutButtons.buttons}}
+					<button class="btn disabled">{{this}}</button>
+				{{/each}}
+			</div>
+		{{/if}}
+		<hr>
+	{{/if}}	
+</template>

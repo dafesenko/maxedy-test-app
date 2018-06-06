@@ -1,0 +1,26 @@
+<template name="documentView">
+    <button class="btn btn-info-outline create-document">Create document</button>
+
+    {{#if getView 1}}
+        <hr>
+        <form>
+            {{#each docDefinition in getLabel}}
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <label for="client-{{docDefinition.name}}-field" class="control-label">{{docDefinition.label}}</label>
+                        </div>
+                        <div class="col-xs-9">
+                            <input type="{{docDefinition.type}}" class="form-control form-control-sm" name="client-{{docDefinition.name}}-field" id="client-{{docDefinition.name}}-field">
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+            {{#each getView.buttons}}
+                <button type="button" class="btn btn-{{this}} m-t-2">{{this}}</button>
+            {{/each}}
+        </form>
+
+    {{/if}}
+            
+</template>
